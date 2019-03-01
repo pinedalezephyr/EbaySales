@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- type new or used -->
+    <string-array name="array_type_options">
+        <item>@string/unknown</item>
+        <item>@string/new_item</item>
+        <item>@string/used_item</item>
+        <item>@string/new_opened</item>
+    </string-array>
+</resources>
