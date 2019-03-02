@@ -105,8 +105,8 @@ public class InventoryProvider extends ContentProvider {
             throw new IllegalArgumentException("Item Condition requires name");
         }
 
-        Integer supplierPhone = values.getAsInteger(InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER);
-        if (supplierPhone != null && supplierPhone < 0) {
+        String supplierPhone = values.getAsString(InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER);
+        if (supplierPhone != null && supplierPhone.isEmpty()) {
             throw new IllegalArgumentException("Supplier Phone requires valid");
         }
 
@@ -189,8 +189,8 @@ public class InventoryProvider extends ContentProvider {
             }
         }
         if (values.containsKey(InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER)) {
-            Integer supplierPhone = values.getAsInteger(InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER);
-            if (supplierPhone != null && supplierPhone < 0) {
+            String supplierPhone = values.getAsString(InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER);
+            if (supplierPhone != null && supplierPhone.isEmpty()) {
                 throw new
                         IllegalArgumentException("Supplier Phone requires valid");
             }

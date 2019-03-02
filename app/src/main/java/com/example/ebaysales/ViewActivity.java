@@ -95,12 +95,12 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
             final int currentPrice = cursor.getInt(priceColumnIndex);
             final int currentQuantity = cursor.getInt(quantityColumnIndex);
             int currentSupplierName = cursor.getInt(supplierNameColumnIndex);
-            final int currentSupplierPhone = cursor.getInt(supplierPhoneColumnIndex);
+            final String currentSupplierPhone = cursor.getString(supplierPhoneColumnIndex);
 
             mProductNameViewText.setText(currentName);
             mProductPriceViewText.setText(Integer.toString(currentPrice));
             mProductQuantityViewText.setText(Integer.toString(currentQuantity));
-            mProductSupplierPhoneNumberViewText.setText(Integer.toString(currentSupplierPhone));
+            mProductSupplierPhoneNumberViewText.setText(currentSupplierPhone);
 
 
             switch (currentSupplierName) {
@@ -146,8 +146,7 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
             phoneButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String phone = String.valueOf(currentSupplierPhone);
-                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", currentSupplierPhone, null));
                     startActivity(intent);
                 }
             });

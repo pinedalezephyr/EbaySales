@@ -294,12 +294,12 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             int currentPrice = cursor.getInt(priceColumnIndex);
             int currentQuantity = cursor.getInt(quantityColumnIndex);
             int currentSupplierName = cursor.getInt(supplierNameColumnIndex);
-            int currentSupplierPhone = cursor.getInt(supplierPhoneColumnIndex);
+            String currentSupplierPhone = cursor.getString(supplierPhoneColumnIndex);
 
             mProductNameEditText.setText(currentName);
             mProductPriceEditText.setText(Integer.toString(currentPrice));
             mProductQuantityEditText.setText(Integer.toString(currentQuantity));
-            mProductSupplierPhoneNumberEditText.setText(Integer.toString(currentSupplierPhone));
+            mProductSupplierPhoneNumberEditText.setText(currentSupplierPhone);
 
 
             switch (currentSupplierName) {
